@@ -39,7 +39,7 @@ header {
   backdrop-filter: blur(8px); z-index: 100;
 }
 .logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: var(--rust); }
-nav { display: flex; gap: 36px; }
+nav { display: flex; gap: 30px; }
 nav a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
 nav a:hover { color: var(--rust); }
 
@@ -51,7 +51,7 @@ nav a:hover { color: var(--rust); }
 .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(4rem,8vw,7.5rem); font-weight: 900; line-height: 0.88; letter-spacing: -0.02em; }
 .hero-name em { font-style: italic; color: var(--rust); }
 .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
-.hero-desc { font-size: 0.95rem; line-height: 1.75; color: var(--warm-gray); max-width: 420px; }
+.hero-desc { font-size: 0.95rem; line-height: 1.75; color: var(--warm-gray); max-width: 440px; }
 .hero-cta { display: flex; gap: 12px; }
 .btn { font-family: 'Instrument Sans',sans-serif; font-size: 0.73rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 13px 28px; text-decoration: none; border: 1.5px solid; transition: all 0.25s; display: inline-block; }
 .btn-rust { background: var(--rust); border-color: var(--rust); color: #fff; }
@@ -61,7 +61,7 @@ nav a:hover { color: var(--rust); }
 .hero-right { padding: 80px 48px; display: flex; flex-direction: column; background: var(--accent-bg); }
 .sidebar-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gray); border-bottom: 1px solid var(--light-border); padding-bottom: 12px; margin-bottom: 24px; }
 .info-item { display: flex; flex-direction: column; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--light-border); }
-.info-item:last-child { border-bottom: none; }
+.info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 .info-key { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 4px; }
 .info-val { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
 .info-val a { color: var(--rust); text-decoration: none; }
@@ -101,6 +101,19 @@ nav a:hover { color: var(--rust); }
 .exp-meta { font-size: 0.8rem; color: var(--warm-gray); margin-bottom: 24px; }
 .exp-body { font-size: 0.9rem; line-height: 1.8; color: var(--warm-gray); max-width: 560px; }
 .exp-body strong { color: var(--ink); font-weight: 600; }
+.exp-body ul { padding-left: 18px; margin-top: 8px; }
+.exp-body li { margin-bottom: 8px; }
+
+.projects-layout { display: flex; flex-direction: column; gap: 2px; }
+.project-card { background: var(--card-bg); border: 1px solid var(--light-border); padding: 36px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; transition: border-color 0.3s, box-shadow 0.3s; }
+.project-card:hover { border-color: var(--rust); box-shadow: 4px 4px 0 var(--rust); }
+.project-title-block { display: flex; flex-direction: column; }
+.project-name { font-family: 'Playfair Display',serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+.project-date { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+.project-desc { font-size: 0.85rem; line-height: 1.85; color: var(--warm-gray); }
+.project-desc ul { padding-left: 18px; }
+.project-desc li { margin-bottom: 8px; }
 
 .certs-section { background: var(--ink); color: var(--cream); }
 .certs-section .section-num { color: rgba(255,255,255,0.07); }
@@ -121,7 +134,7 @@ nav a:hover { color: var(--rust); }
 .contact-headline em { font-style: italic; color: var(--rust); }
 .contact-sub { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.8; }
 .contact-cards { display: flex; flex-direction: column; gap: 2px; }
-.contact-card { display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border: 1px solid var(--light-border); background: var(--card-bg); text-decoration: none; color: inherit; transition: all 0.25s; }
+.contact-card { display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; border: 1px solid var(--light-border); background: var(--card-bg); text-decoration: none; color: inherit; transition: all 0.25s; }
 .contact-card:hover { border-color: var(--rust); box-shadow: 4px 4px 0 var(--rust); transform: translate(-2px,-2px); }
 .contact-card-type { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 4px; }
 .contact-card-val { font-size: 0.9rem; font-weight: 500; }
@@ -145,6 +158,7 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
   .section { padding: 72px 24px; }
   .skills-layout { grid-template-columns: 1fr; }
   .exp-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-card { grid-template-columns: 1fr; gap: 20px; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
   .cert-item { grid-template-columns: 40px 1fr; } .cert-arrow { display: none; }
@@ -155,10 +169,11 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
 <body>
 
 <header>
-  <div class="logo">Gajulapalli Goutham Sai Reddy</div>
+  <div class="logo">Goutham Sai Reddy</div>
   <nav>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#certs">Certs</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -167,11 +182,11 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
 <section class="hero">
   <div class="hero-left">
     <div>
-      <div class="hero-eyebrow reveal">Open to work · Web &amp; App Developer</div>
+      <div class="hero-eyebrow reveal">Open to work · Full-Stack Developer</div>
       <h1 class="hero-name reveal reveal-d1">Goutham<br/><em>Sai</em><br/>Reddy</h1>
     </div>
     <div class="hero-bottom">
-      <p class="hero-desc reveal reveal-d2">CSE student &amp; Full-Stack Developer at CSI Global Ltd. I build real-world products across the entire stack — Java backends to responsive frontends — and I'm always shipping something new.</p>
+      <p class="hero-desc reveal reveal-d2">CSE undergrad at MVJ College of Engineering and Full-Stack Developer Intern at Virtusa. I build responsive, production-grade interfaces with React and ship full-stack features end-to-end with Node.js, Express, and MongoDB.</p>
       <div class="hero-cta reveal reveal-d3">
         <a href="#contact" class="btn btn-rust">Hire me</a>
         <a href="#skills" class="btn btn-ghost">Explore ↓</a>
@@ -182,15 +197,15 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
     <div class="sidebar-label">Quick Info</div>
     <div class="info-item">
       <span class="info-key">Location</span>
-      <span class="info-val">Bengaluru / Hyderabad, India</span>
+      <span class="info-val">Bengaluru, India</span>
     </div>
     <div class="info-item">
       <span class="info-key">Current Role</span>
-      <span class="info-val">Software Developer, CSI Global Ltd</span>
+      <span class="info-val">Full Stack Developer Intern, Virtusa</span>
     </div>
     <div class="info-item">
       <span class="info-key">Education</span>
-      <span class="info-val">B.E. Computer Science · MVJ College of Engineering, 2022–2026</span>
+      <span class="info-val">B.E. Computer Science · MVJ College of Engineering, 2022–2026 (CGPA 7.28)</span>
     </div>
     <div class="info-item">
       <span class="info-key">Email</span>
@@ -199,7 +214,7 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
     <div class="info-item">
       <span class="info-key">Top Skills</span>
       <div class="tag-row">
-        <span class="tag">Java</span><span class="tag">Python</span><span class="tag">DevOps</span><span class="tag">Full-Stack</span><span class="tag">AI</span>
+        <span class="tag">React.js</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">REST APIs</span>
       </div>
     </div>
   </div>
@@ -214,12 +229,12 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
     </div>
   </div>
   <div class="skills-layout">
-    <div class="skill-row reveal"><div class="skill-header"><div class="skill-name">Java</div><div class="skill-emoji">☕</div></div><p class="skill-desc">Object-oriented backend development, Spring framework, scalable APIs, and robust server-side logic.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="85%"></div></div></div>
-    <div class="skill-row reveal reveal-d1"><div class="skill-header"><div class="skill-name">Python</div><div class="skill-emoji">🐍</div></div><p class="skill-desc">Scripting, data analysis, machine learning integrations, and AI application development.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="80%"></div></div></div>
-    <div class="skill-row reveal reveal-d2"><div class="skill-header"><div class="skill-name">Full-Stack Web</div><div class="skill-emoji">🌐</div></div><p class="skill-desc">HTML, CSS, JavaScript — responsive, polished interfaces that work across every device.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="78%"></div></div></div>
-    <div class="skill-row reveal reveal-d3"><div class="skill-header"><div class="skill-name">DevOps</div><div class="skill-emoji">⚙️</div></div><p class="skill-desc">CI/CD workflows, deployment pipelines, infrastructure management, and cloud tooling.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="70%"></div></div></div>
-    <div class="skill-row reveal"><div class="skill-header"><div class="skill-name">AI &amp; Gemini</div><div class="skill-emoji">🤖</div></div><p class="skill-desc">Building real-world AI apps with Gemini, Imagen, and Google Vertex AI — prompt design included.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="72%"></div></div></div>
-    <div class="skill-row reveal reveal-d1"><div class="skill-header"><div class="skill-name">Data Analysis</div><div class="skill-emoji">📊</div></div><p class="skill-desc">Wrangling, visualising, and drawing insights from data using Python's analytical ecosystem.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="75%"></div></div></div>
+    <div class="skill-row reveal"><div class="skill-header"><div class="skill-name">JavaScript &amp; TypeScript</div><div class="skill-emoji">🟨</div></div><p class="skill-desc">ES6+ JavaScript and TypeScript for building type-safe, maintainable applications across the stack.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="85%"></div></div></div>
+    <div class="skill-row reveal reveal-d1"><div class="skill-header"><div class="skill-name">React.js &amp; Angular</div><div class="skill-emoji">⚛️</div></div><p class="skill-desc">Reusable components, client-side routing, and state management for responsive, dynamic UIs.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="88%"></div></div></div>
+    <div class="skill-row reveal reveal-d2"><div class="skill-header"><div class="skill-name">Node.js &amp; Express</div><div class="skill-emoji">🟩</div></div><p class="skill-desc">Scalable backend APIs, server-side logic, and RESTful services built with Node.js and Express.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="80%"></div></div></div>
+    <div class="skill-row reveal reveal-d3"><div class="skill-header"><div class="skill-name">MongoDB &amp; MySQL</div><div class="skill-emoji">🗄️</div></div><p class="skill-desc">Schema design, queries, and data management across NoSQL and relational databases.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="78%"></div></div></div>
+    <div class="skill-row reveal"><div class="skill-header"><div class="skill-name">REST APIs</div><div class="skill-emoji">🔗</div></div><p class="skill-desc">Designing and integrating RESTful APIs for efficient, seamless client-server communication.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="82%"></div></div></div>
+    <div class="skill-row reveal reveal-d1"><div class="skill-header"><div class="skill-name">Git &amp; Dev Tools</div><div class="skill-emoji">🛠️</div></div><p class="skill-desc">Git, GitHub, VS Code, Chrome DevTools, and Linux — Agile collaboration with cross-functional teams.</p><div class="skill-bar-bg"><div class="skill-bar-fill" data-w="84%"></div></div></div>
   </div>
 </section>
 
@@ -234,26 +249,105 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
   <div class="exp-grid">
     <div class="exp-timeline reveal">
       <div class="exp-step active" data-panel="p1">
-        <div class="exp-step-name">CSI Global Ltd</div>
-        <div class="exp-step-date">Jan 2026 – Present</div>
+        <div class="exp-step-name">Virtusa</div>
+        <div class="exp-step-date">May 2026 – Present</div>
       </div>
       <div class="exp-step" data-panel="p2">
+        <div class="exp-step-name">CSI Global</div>
+        <div class="exp-step-date">Jan 2026 – May 2026</div>
+      </div>
+      <div class="exp-step" data-panel="p3">
         <div class="exp-step-name">MVJ College of Engineering</div>
         <div class="exp-step-date">2022 – 2026</div>
       </div>
     </div>
     <div class="reveal reveal-d1">
       <div class="exp-panel active" id="p1">
-        <div class="exp-company-badge">CSI Global Ltd</div>
-        <div class="exp-role">Software<br/>Developer</div>
-        <div class="exp-meta">Hyderabad, Telangana · Jan 2026 – Present (3 months)</div>
-        <p class="exp-body">Contributing to <strong>real-world software products</strong> — building scalable features on both frontend and backend. Working within a professional engineering team to design, develop, and ship software that matters.</p>
+        <div class="exp-company-badge">Virtusa</div>
+        <div class="exp-role">Full Stack<br/>Developer Intern</div>
+        <div class="exp-meta">May 2026 – Present</div>
+        <p class="exp-body">Developing full-stack web applications using <strong>React.js, Node.js, Express.js, and MongoDB</strong>.
+        <ul>
+          <li>Building reusable frontend components and scalable backend APIs for responsive, dynamic user experiences.</li>
+          <li>Designing and integrating RESTful APIs with MongoDB for efficient data management and seamless client-server communication.</li>
+          <li>Collaborating with cross-functional teams using Git and Agile methodologies to develop, test, debug, and deploy features.</li>
+        </ul>
+        </p>
       </div>
       <div class="exp-panel" id="p2">
+        <div class="exp-company-badge">CSI Global</div>
+        <div class="exp-role">Frontend<br/>Developer Intern</div>
+        <div class="exp-meta">Jan 2026 – May 2026</div>
+        <p class="exp-body">Developed responsive, interactive user interfaces using <strong>React.js, HTML, CSS, and JavaScript</strong>.
+        <ul>
+          <li>Built reusable React components and implemented responsive layouts to improve user experience.</li>
+          <li>Integrated REST APIs with frontend applications to display and manage dynamic data efficiently.</li>
+          <li>Collaborated with designers and backend developers using Git and Agile methodologies to deliver features and resolve UI issues.</li>
+        </ul>
+        </p>
+      </div>
+      <div class="exp-panel" id="p3">
         <div class="exp-company-badge">MVJ College of Engineering</div>
         <div class="exp-role">B.E. Computer<br/>Science</div>
-        <div class="exp-meta">Bangalore, India · 2022 – 2026</div>
-        <p class="exp-body">Studying <strong>core Computer Science</strong> fundamentals — algorithms, data structures, operating systems, and software engineering. Complementing academics with real-world project work and professional experience.</p>
+        <div class="exp-meta">Bengaluru, India · 2022 – 2026 · CGPA 7.28</div>
+        <p class="exp-body">Studying <strong>core Computer Science</strong> fundamentals — algorithms, data structures, operating systems, and software engineering. Complementing academics with internships and personal project work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-header reveal">
+    <div class="section-num">03</div>
+    <div>
+      <div class="section-kicker">Selected Work</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+  </div>
+  <div class="projects-layout">
+    <div class="project-card reveal">
+      <div class="project-title-block">
+        <div class="project-name">E-Commerce Web Application</div>
+        <div class="project-date">Jul 2026 – Present</div>
+        <div class="project-stack"><span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div>
+      </div>
+      <div class="project-desc">
+        <ul>
+          <li>Building a responsive e-commerce web application to strengthen frontend development skills.</li>
+          <li>Developing reusable React components for product listings, product details, shopping cart, and user authentication pages.</li>
+          <li>Implementing client-side routing, state management, and responsive layouts for a seamless cross-device experience.</li>
+          <li>Integrating REST APIs to fetch product data and manage dynamic content.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-d1">
+      <div class="project-title-block">
+        <div class="project-name">School Management ERP System</div>
+        <div class="project-date">Feb 2026 – Apr 2026</div>
+        <div class="project-stack"><span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div>
+      </div>
+      <div class="project-desc">
+        <ul>
+          <li>Developed a responsive frontend for a School Management ERP system.</li>
+          <li>Built reusable UI components for attendance management, student records, faculty management, and academic dashboards.</li>
+          <li>Integrated REST APIs to fetch and display dynamic data with efficient state management.</li>
+          <li>Implemented role-based navigation and optimized performance by reducing unnecessary re-renders.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-d2">
+      <div class="project-title-block">
+        <div class="project-name">Smart Solar Monitoring System</div>
+        <div class="project-date">Feb 2025 – Dec 2025</div>
+        <div class="project-stack"><span class="tag">JavaScript</span><span class="tag">Firebase</span><span class="tag">HTML/CSS</span></div>
+      </div>
+      <div class="project-desc">
+        <ul>
+          <li>Developed a responsive web dashboard for real-time solar performance monitoring.</li>
+          <li>Integrated Firebase to display live sensor data and historical performance metrics.</li>
+          <li>Designed interactive charts and dashboards to visualize energy generation and system status.</li>
+          <li>Optimized the UI for cross-browser compatibility with intuitive, real-time navigation.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -261,7 +355,7 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
 
 <section class="section certs-section" id="certs">
   <div class="section-header reveal">
-    <div class="section-num">03</div>
+    <div class="section-num">04</div>
     <div>
       <div class="section-kicker">Credentials</div>
       <h2 class="section-title">Certifications</h2>
@@ -278,7 +372,7 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
 
 <section class="section" id="contact">
   <div class="section-header reveal">
-    <div class="section-num">04</div>
+    <div class="section-num">05</div>
     <div>
       <div class="section-kicker">Get in touch</div>
       <h2 class="section-title">Contact</h2>
@@ -292,7 +386,9 @@ footer { padding: 32px 60px; display: flex; justify-content: space-between; alig
     <div class="contact-cards reveal reveal-d1">
       <a href="mailto:gouthamsai005@gmail.com" class="contact-card"><div><div class="contact-card-type">Email</div><div class="contact-card-val">gouthamsai005@gmail.com</div></div><div class="contact-card-icon">✉</div></a>
       <a href="tel:+919036592238" class="contact-card"><div><div class="contact-card-type">Phone</div><div class="contact-card-val">+91 90365 92238</div></div><div class="contact-card-icon">📞</div></a>
-      <a href="https://www.linkedin.com/in/goutham-saireddy-b5aa59279" target="_blank" class="contact-card"><div><div class="contact-card-type">LinkedIn</div><div class="contact-card-val">goutham-saireddy-b5aa59279</div></div><div class="contact-card-icon">💼</div></a>
+      <a href="https://linkedin.com/in/goutham-sai-reddy" target="_blank" class="contact-card"><div><div class="contact-card-type">LinkedIn</div><div class="contact-card-val">goutham-sai-reddy</div></div><div class="contact-card-icon">💼</div></a>
+      <a href="https://github.com/G0uthamsai" target="_blank" class="contact-card"><div><div class="contact-card-type">GitHub</div><div class="contact-card-val">G0uthamsai</div></div><div class="contact-card-icon">🖥</div></a>
+      <a href="https://leetcode.com/gouthamsaireddy" target="_blank" class="contact-card"><div><div class="contact-card-type">LeetCode</div><div class="contact-card-val">gouthamsaireddy</div></div><div class="contact-card-icon">🧩</div></a>
     </div>
   </div>
 </section>
